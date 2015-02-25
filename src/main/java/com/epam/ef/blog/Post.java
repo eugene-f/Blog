@@ -5,4 +5,5 @@ import java.util.ArrayList;
 public class Post extends Publication {
     ArrayList<User> visibility;
     ArrayList<User> reposts;
+    ArrayList<Tag> tags;
 }
