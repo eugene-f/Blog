@@ -1,11 +1,12 @@
 package com.epam.ef.blog;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Publication {
-    int id;
-    int author;
+    int publicationId;
+    int authorId;
     Date date;
     String content;
-    int likes;
+    ArrayList<User> likes;
 }
