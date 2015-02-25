@@ -8,5 +8,5 @@ public class User {
     String name;
     String surname;
     String age;
-    ArrayList<Integer> postList = new ArrayList<Integer>();
+    ArrayList<Post> posts;
 }

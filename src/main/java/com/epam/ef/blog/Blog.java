@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Blog {
     int blogId;
-    int authorId;
+    User author;
     int rating;
     ArrayList<Post> posts = new ArrayList<Post>();
 }

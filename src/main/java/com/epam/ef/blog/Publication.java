@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Publication {
     int publicationId;
-    int authorId;
+    User author;
     Date date;
     String content;
     ArrayList<User> likes;
