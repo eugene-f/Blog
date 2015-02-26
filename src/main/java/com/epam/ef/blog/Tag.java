@@ -1,8 +1,8 @@
 package com.epam.ef.blog;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Tag {
     String name;
-    ArrayList<Post> posts;
+    List<Post> posts;
 }

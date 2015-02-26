@@ -1,10 +1,10 @@
 package com.epam.ef.blog;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Blog {
-    int blogId;
-    User author;
-    int rating;
-    ArrayList<Post> posts = new ArrayList<Post>();
+    private int id;
+    private User author;
+    private int rating;
+    private List<Post> posts;
 }

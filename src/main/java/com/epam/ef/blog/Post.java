@@ -1,9 +1,9 @@
 package com.epam.ef.blog;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Post extends Publication {
-    ArrayList<User> visibility;
-    ArrayList<User> reposts;
-    ArrayList<Tag> tags;
+    private List<User> visibility;
+    private List<User> reposts;
+    private List<Tag> tags;
 }
