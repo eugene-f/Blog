@@ -3,8 +3,7 @@ package com.epam.ef.blog;
 import java.util.Date;
 import java.util.List;
 
-public class Publication {
-    private int id;
+public abstract class Publication extends BaseEntity {
     private User author;
     private Date date;
     private String content;
