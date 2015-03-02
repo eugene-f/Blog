@@ -3,7 +3,7 @@ package com.epam.ef.blog;
 import java.util.Date;
 import java.util.List;
 
-public class User extends BaseEntity {
+public class User extends BaseEntity implements Comparable<User> {
     private Role role;
     private String name;
     private String surname;
@@ -17,4 +17,12 @@ public class User extends BaseEntity {
     private List<Post> favorites;
     private List<User> subscriptions;
     private List<User> subscribers;
+
+    @Override
+    public int compareTo(User anotherUser) {
+        int thisPostsCount = this.posts.size();
+        int anotherPostsCount = anotherUser.posts.size();
+        return (thisPostsCount < anotherPostsCount ? -1 : (thisPostsCount == anotherPostsCount ? 0 : 1));
+    }
+
 }
