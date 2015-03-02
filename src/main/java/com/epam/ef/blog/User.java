@@ -1,5 +1,6 @@
 package com.epam.ef.blog;
 
+import java.util.Date;
 import java.util.List;
 
 public class User extends BaseEntity {
@@ -7,6 +8,8 @@ public class User extends BaseEntity {
     private String name;
     private String surname;
     private byte age;
+    private Date birthday;
+    private Date registration;
     private String email;
     private String passwordHash;
     private List<Post> posts;
