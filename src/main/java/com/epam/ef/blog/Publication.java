@@ -10,6 +10,10 @@ public abstract class Publication extends BaseEntity implements Comparable<Publi
     private String content;
     private List<User> likes;
 
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
     @Override
     public int compareTo(Publication otherPublication) {
         Date thisDate = this.date;

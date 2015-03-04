@@ -9,4 +9,11 @@ public class Post extends Publication {
     private List<User> reposts;
     private List<Comment> comments;
     private List<Tag> tags;
+
+    public Post(Blog blog, User author) {
+        this.blog = blog;
+        super.setAuthor(author);
+    }
+
+
 }
