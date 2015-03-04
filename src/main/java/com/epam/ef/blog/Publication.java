@@ -1,5 +1,6 @@
 package com.epam.ef.blog;
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -10,9 +11,20 @@ public abstract class Publication extends BaseEntity implements Comparable<Publi
     private List<User> likes;
 
     @Override
-    public int compareTo(Publication anotherPublication) {
+    public int compareTo(Publication otherPublication) {
         Date thisDate = this.date;
-        Date anotherDate = anotherPublication.date;
+        Date anotherDate = otherPublication.date;
         return thisDate.compareTo(anotherDate);
+    }
+
+    public static class sortPublicationsByLikes implements Comparator<Publication> {
+        @Override
+        public int compare(Publication o1, Publication o2) {
+            return Integer.compare(o1.getLikesCount(), o2.getLikesCount());
+        }
+    }
+
+    public int getLikesCount() {
+        return likes.size();
     }
 }
