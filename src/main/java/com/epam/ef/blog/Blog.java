@@ -15,6 +15,30 @@ public class Blog extends BaseEntity implements Comparable<Blog> {
         this.author = author;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public int compareTo(Blog otherBlog) {
         int thisRating = this.rating;
