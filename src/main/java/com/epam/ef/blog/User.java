@@ -18,6 +18,13 @@ public class User extends BaseEntity implements Comparable<User> {
     private List<User> subscriptions;
     private List<User> subscribers;
 
+    public User(String name, String surname, String email, Role role) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.role = role;
+    }
+
     @Override
     public int compareTo(User anotherUser) {
         int thisPostsCount = this.posts.size();
@@ -25,4 +32,8 @@ public class User extends BaseEntity implements Comparable<User> {
         return (thisPostsCount < anotherPostsCount ? -1 : (thisPostsCount == anotherPostsCount ? 0 : 1));
     }
 
+    @Override
+    public String toString() {
+        return this.name + " " + this.surname + " " + this.email + " " + this.role;
+    }
 }

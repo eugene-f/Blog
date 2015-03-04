@@ -4,5 +4,15 @@ import java.util.List;
 
 public class Role {
     private String name;
-    private List<Permission> permissions;
+    private Permissions permissions;
+
+    public Role(String name, Permissions permissions) {
+        this.name = name;
+        this.permissions = permissions;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

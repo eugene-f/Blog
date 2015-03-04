@@ -1,6 +1,7 @@
 package com.epam.ef.blog;
 
 import java.util.List;
+import java.util.Map;
 
 public class Blog extends BaseEntity implements Comparable<Blog> {
     private String title;
@@ -16,4 +17,5 @@ public class Blog extends BaseEntity implements Comparable<Blog> {
         int anotherRating = anotherBlog.rating;
         return (thisRating < anotherRating ? -1 : (thisRating == anotherRating ? 0 : 1));
     }
+
 }
