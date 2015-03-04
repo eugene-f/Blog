@@ -3,7 +3,6 @@ package com.epam.ef.blog;
 import java.util.Random;
 
 public class RoleFactory {
-
     private static final Role ADMIN = new Role("ADMIN", new Permissions(true, true, true));
     private static final Role EDITOR = new Role("EDITOR", new Permissions(true, true, false));
     private static final Role USER = new Role("USER", new Permissions(true, false, false));

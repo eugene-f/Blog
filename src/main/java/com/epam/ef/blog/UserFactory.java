@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 public class UserFactory {
-
     private static List<User> users = new ArrayList<User>();
     private static final Random random = new Random();
 
@@ -18,5 +17,4 @@ public class UserFactory {
     public static User getRandomUser() {
         return users.get(random.nextInt(10));
     }
-
 }
