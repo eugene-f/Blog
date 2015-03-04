@@ -26,9 +26,9 @@ public class User extends BaseEntity implements Comparable<User> {
     }
 
     @Override
-    public int compareTo(User anotherUser) {
+    public int compareTo(User otherUser) {
         int thisPostsCount = this.posts.size();
-        int anotherPostsCount = anotherUser.posts.size();
+        int anotherPostsCount = otherUser.posts.size();
         return (thisPostsCount < anotherPostsCount ? -1 : (thisPostsCount == anotherPostsCount ? 0 : 1));
     }
 
