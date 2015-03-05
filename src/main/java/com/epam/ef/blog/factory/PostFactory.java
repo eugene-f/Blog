@@ -9,10 +9,22 @@ public class PostFactory {
 
     private static List<Post> posts = new ArrayList<Post>();
 
-    static {
-        for (int i = 0; i < 15; i++) {
-            posts.add(new Post(BlogFactory.getBlog(), UserFactory.getRandomUser()));
-        }
+//    static {
+//        for (int i = 0; i < 15; i++) {
+//            posts.add(new Post(BlogFactory.getBlog(), UserFactory.getRandomUser()));
+//        }
+//    }
+
+    public static Post createPost() {
+        Post post = new Post();
+        post.setContent("Content");
+        return post;
     }
 
+    public static List<Post> createPosts() {
+        for (int i = 0; i < 10; i++) {
+            posts.add(createPost());
+        }
+        return posts;
+    }
 }

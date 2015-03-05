@@ -19,11 +19,8 @@ public class UserFactory {
 //        user.setRegistration(new Date().getDate());
         user.setEmail("email.gmail.com");
         user.setPasswordHash("354df541a3524351321212d3s351t23e55621tg3y1435yrt");
-        user.setPosts(PostFactory.createPost());
-        user.setComments(CommentFactory.createComment());
-        user.setFavorites(PostFactory.createRost());
-        user.setSubscriptions(UserFactory.createUser());
-        user.setSubscribers(UserFactory.createUser());
+        user.setPosts(PostFactory.createPosts());
+        user.setFavorites(PostFactory.createPosts());
         return user;
     }
 }

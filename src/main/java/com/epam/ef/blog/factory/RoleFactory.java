@@ -12,4 +12,8 @@ public class RoleFactory {
     private static final Role GUEST = new Role("GUEST", new Permissions(false, false, false));
     private static final Role[] ROLES = new Role[]{ADMIN, EDITOR, USER, GUEST};
     private static final Random random = new Random();
+
+    public static Role createRole() {
+        return ADMIN;
+    }
 }

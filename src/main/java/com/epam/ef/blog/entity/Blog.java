@@ -17,6 +17,18 @@ public class Blog extends BaseEntity implements Comparable<Blog> {
         return (thisRating < otherRating ? -1 : (thisRating == otherRating ? 0 : 1));
     }
 
+    @Override
+    public String toString() {
+        return "Blog{" + "\n" +
+                "title='" + title + '\'' + "\n" +
+                ", description='" + description + '\'' + "\n" +
+                ", author=" + author + "\n" +
+                ", rating=" + rating + "\n" +
+                ", posts=" + posts + "\n" +
+                ", tags=" + tags + "\n" +
+                '}';
+    }
+
     public String getTitle() {
         return title;
     }

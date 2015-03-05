@@ -11,7 +11,6 @@ public class BlogFactory {
         blog.setAuthor(UserFactory.createUser());
         blog.setRating(21343);
         blog.setPosts(PostFactory.createPosts());
-        blog.setTags(TagFactory.createTags());
         return blog;
     }
 }
