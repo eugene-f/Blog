@@ -1,4 +1,4 @@
-package com.epam.ef.blog;
+package com.epam.ef.blog.entity;
 
 public class Comment extends Publication {
     private Post forPost;

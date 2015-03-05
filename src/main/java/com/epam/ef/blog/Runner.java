@@ -1,14 +1,12 @@
 package com.epam.ef.blog;
 
-public class Runner {
+import com.epam.ef.blog.entity.Blog;
+import com.epam.ef.blog.factory.BlogFactory;
 
-    public static Blog blog = BlogFactory.getBlog();
+public class Runner {
 
     public static void main(String[] args) {
         Blog blog = BlogFactory.createBlog();
         System.out.println(blog.toString());
-//        for (int i = 0; i < 5; i++) {
-//            System.out.println(UserFactory.getRandomUser().toString());
-//        }
     }
 }

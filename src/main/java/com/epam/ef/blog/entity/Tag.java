@@ -1,4 +1,4 @@
-package com.epam.ef.blog;
+package com.epam.ef.blog.entity;
 
 import java.util.List;
 

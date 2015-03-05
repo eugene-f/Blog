@@ -1,4 +1,6 @@
-package com.epam.ef.blog;
+package com.epam.ef.blog.factory;
+
+import com.epam.ef.blog.entity.Post;
 
 import java.util.ArrayList;
 import java.util.List;

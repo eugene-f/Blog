@@ -1,6 +1,4 @@
-package com.epam.ef.blog;
-
-import java.util.List;
+package com.epam.ef.blog.entity;
 
 public class Role {
     private String name;
@@ -9,10 +7,5 @@ public class Role {
     public Role(String name, Permissions permissions) {
         this.name = name;
         this.permissions = permissions;
-    }
-
-    @Override
-    public String toString() {
-        return this.name;
     }
 }

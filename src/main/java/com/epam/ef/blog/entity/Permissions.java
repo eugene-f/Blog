@@ -1,4 +1,4 @@
-package com.epam.ef.blog;
+package com.epam.ef.blog.entity;
 
 public class Permissions {
     private boolean create;
