@@ -1,6 +1,7 @@
 package com.epam.ef.blog.factory;
 
 import com.epam.ef.blog.entity.Post;
+import com.thedeanda.lorem.Lorem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +18,13 @@ public class PostFactory {
 
     public static Post createPost() {
         Post post = new Post();
-        post.setTitle("Title");
-        post.setContent("Content");
+        post.setTitle(Lorem.getTitle(3, 10));
+        post.setContent(Lorem.getHtmlParagraphs(3, 7));
         return post;
     }
 
-    public static List<Post> createPosts() {
-        for (int i = 0; i < 3; i++) {
+    public static List<Post> createPosts(int count) {
+        for (int i = 0; i < count; i++) {
             posts.add(createPost());
         }
         return posts;
