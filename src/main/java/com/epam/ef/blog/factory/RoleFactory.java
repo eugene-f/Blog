@@ -13,7 +13,7 @@ public class RoleFactory {
     private static final Role[] ROLES = new Role[]{ADMIN, EDITOR, USER, GUEST};
     private static final Random random = new Random();
 
-    public static Role createRole() {
-        return ADMIN;
+    public static Role getRandomRole() {
+        return ROLES[random.nextInt(ROLES.length - 1)];
     }
 }

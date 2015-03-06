@@ -10,6 +10,18 @@ public class Post extends Publication {
     private List<Comment> comments;
     private List<Tag> tags;
 
+    @Override
+    public String toString() {
+        return "Post{" + "\n" +
+                "blog=" + blog + "\n" +
+                ", title='" + title + '\'' + "\n" +
+                ", visibility=" + visibility + "\n" +
+                ", reposts=" + reposts + "\n" +
+                ", comments=" + comments + "\n" +
+                ", tags=" + tags + "\n" +
+                '}' + super.toString();
+    }
+
     public Blog getBlog() {
         return blog;
     }

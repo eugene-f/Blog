@@ -1,7 +1,6 @@
 package com.epam.ef.blog.factory;
 
 import com.epam.ef.blog.entity.Blog;
-import com.epam.ef.blog.entity.User;
 
 public class BlogFactory {
     public static Blog createBlog() {

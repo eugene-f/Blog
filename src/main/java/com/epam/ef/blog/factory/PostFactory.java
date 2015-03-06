@@ -17,12 +17,13 @@ public class PostFactory {
 
     public static Post createPost() {
         Post post = new Post();
+        post.setTitle("Title");
         post.setContent("Content");
         return post;
     }
 
     public static List<Post> createPosts() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             posts.add(createPost());
         }
         return posts;

@@ -13,6 +13,10 @@ public class BaseEntity {
         uuid = UUID.randomUUID();
     }
 
+    public static Random getRandom() {
+        return random;
+    }
+
     @Override
     public int hashCode() {
         return super.hashCode();
@@ -26,10 +30,6 @@ public class BaseEntity {
     @Override
     public String toString() {
         return super.toString();
-    }
-
-    public static Random getRandom() {
-        return random;
     }
 
     public int getId() {

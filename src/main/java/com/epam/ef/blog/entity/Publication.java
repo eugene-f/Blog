@@ -5,6 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 public abstract class Publication extends BaseEntity implements Comparable<Publication> {
+    private User author;
+    private Date date;
+    private String content;
+    private List<User> likes;
+
     public User getAuthor() {
         return author;
     }
@@ -37,10 +42,15 @@ public abstract class Publication extends BaseEntity implements Comparable<Publi
         this.likes = likes;
     }
 
-    private User author;
-    private Date date;
-    private String content;
-    private List<User> likes;
+    @Override
+    public String toString() {
+        return "Publication{" +
+                "author=" + author +
+                ", date=" + date +
+                ", content='" + content + '\'' +
+                ", likes=" + likes +
+                '}';
+    }
 
     @Override
     public int compareTo(Publication otherPublication) {
