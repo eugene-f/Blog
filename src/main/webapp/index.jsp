@@ -7,9 +7,10 @@
 </head>
 <body>
 <h1>${blog.title}</h1>
-<h5>${blog.author.name} ${blog.author.surname}</h5>
+<h5>Author: ${blog.author.name} ${blog.author.surname}</h5>
 <c:forEach items="${blog.posts}" var="post">
     <h3>${post.title}</h3>
+
     <p>${post.content}</p>
 </c:forEach>
 </body>
