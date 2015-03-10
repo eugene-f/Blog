@@ -1,13 +1,36 @@
 package com.epam.ef.blog.entity;
 
 public class Permissions {
-    private boolean create;
-    private boolean edit;
-    private boolean delete;
+
+    private final boolean create;
+    private final boolean edit;
+    private final boolean delete;
 
     public Permissions(boolean create, boolean edit, boolean delete) {
         this.create = create;
         this.edit = edit;
         this.delete = delete;
     }
+
+    @Override
+    public String toString() {
+        return "Permissions{" +
+                "create=" + create +
+                ", edit=" + edit +
+                ", delete=" + delete +
+                '}';
+    }
+
+    public boolean isCreate() {
+        return create;
+    }
+
+    public boolean isEdit() {
+        return edit;
+    }
+
+    public boolean isDelete() {
+        return delete;
+    }
+
 }

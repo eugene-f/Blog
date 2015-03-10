@@ -3,31 +3,33 @@ package com.epam.ef.blog.entity;
 import java.util.List;
 
 public class Post extends Publication {
-    private Blog blog;
+
+    private final Blog blog;
     private String title;
     private List<User> visibility;
     private List<User> reposts;
     private List<Comment> comments;
     private List<Tag> tags;
 
+    public Post(User user, Blog blog) {
+        super(user);
+        this.blog = blog;
+    }
+
     @Override
     public String toString() {
-        return "Post{" + "\n" +
-                "blog=" + blog + "\n" +
-                ", title='" + title + '\'' + "\n" +
-                ", visibility=" + visibility + "\n" +
-                ", reposts=" + reposts + "\n" +
-                ", comments=" + comments + "\n" +
-                ", tags=" + tags + "\n" +
-                '}' + super.toString();
+        return "Post{" +
+                "blog=" + blog +
+                ", title='" + title + '\'' +
+                ", visibility=" + visibility +
+                ", reposts=" + reposts +
+                ", comments=" + comments +
+                ", tags=" + tags +
+                '}';
     }
 
     public Blog getBlog() {
         return blog;
-    }
-
-    public void setBlog(Blog blog) {
-        this.blog = blog;
     }
 
     public String getTitle() {
@@ -69,4 +71,5 @@ public class Post extends Publication {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
+
 }

@@ -6,7 +6,6 @@ import java.util.UUID;
 public class BaseEntity {
 
     private static final Random random = new Random();
-
     private final int id = random.nextInt();
     private final UUID uuid = UUID.randomUUID();
 
@@ -26,7 +25,10 @@ public class BaseEntity {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "BaseEntity{" +
+                "id=" + id +
+                ", uuid=" + uuid +
+                '}';
     }
 
     public int getId() {

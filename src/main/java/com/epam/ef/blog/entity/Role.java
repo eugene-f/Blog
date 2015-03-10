@@ -1,11 +1,29 @@
 package com.epam.ef.blog.entity;
 
 public class Role {
-    private String name;
-    private Permissions permissions;
+
+    private final String name;
+    private final Permissions permissions;
 
     public Role(String name, Permissions permissions) {
         this.name = name;
         this.permissions = permissions;
     }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "name='" + name + '\'' +
+                ", permissions=" + permissions +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Permissions getPermissions() {
+        return permissions;
+    }
+
 }

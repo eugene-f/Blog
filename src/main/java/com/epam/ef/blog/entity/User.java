@@ -4,10 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 public class User extends BaseEntity implements Comparable<User> {
+
+    private final Date registrationDate = new Date();
     private Role role;
-    private String name;
-    private String surname;
-    private Date registration;
+    private String firstName;
+    private String lastName;
     private String email;
     private String passwordHash;
     private List<Post> posts;
@@ -23,6 +24,27 @@ public class User extends BaseEntity implements Comparable<User> {
         return (thisPostsCount < anotherPostsCount ? -1 : (thisPostsCount == anotherPostsCount ? 0 : 1));
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "registrationDate=" + registrationDate +
+                ", role=" + role +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", passwordHash='" + passwordHash + '\'' +
+                ", posts=" + posts +
+                ", comments=" + comments +
+                ", favorites=" + favorites +
+                ", subscriptions=" + subscriptions +
+                ", subscribers=" + subscribers +
+                '}';
+    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
     public Role getRole() {
         return role;
     }
@@ -31,28 +53,20 @@ public class User extends BaseEntity implements Comparable<User> {
         this.role = role;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public Date getRegistration() {
-        return registration;
-    }
-
-    public void setRegistration(Date registration) {
-        this.registration = registration;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

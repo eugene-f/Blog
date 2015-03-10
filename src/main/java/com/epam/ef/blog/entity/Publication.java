@@ -5,25 +5,39 @@ import java.util.Date;
 import java.util.List;
 
 public abstract class Publication extends BaseEntity implements Comparable<Publication> {
-    private User author;
-    private Date date;
+
+    private final Date date = new Date();
+    private final User author;
     private String content;
     private List<User> likes;
 
-    public User getAuthor() {
-        return author;
+    public Publication(User author) {
+        this.author = author;
     }
 
-    public void setAuthor(User author) {
-        this.author = author;
+    @Override
+    public int compareTo(Publication otherPublication) {
+        Date thisDate = this.date;
+        Date anotherDate = otherPublication.date;
+        return thisDate.compareTo(anotherDate);
+    }
+
+    @Override
+    public String toString() {
+        return "Publication{" +
+                "date=" + date +
+                ", author=" + author +
+                ", content='" + content + '\'' +
+                ", likes=" + likes +
+                '}';
     }
 
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public User getAuthor() {
+        return author;
     }
 
     public String getContent() {
@@ -42,31 +56,11 @@ public abstract class Publication extends BaseEntity implements Comparable<Publi
         this.likes = likes;
     }
 
-    @Override
-    public String toString() {
-        return "Publication{" +
-                "author=" + author +
-                ", date=" + date +
-                ", content='" + content + '\'' +
-                ", likes=" + likes +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Publication otherPublication) {
-        Date thisDate = this.date;
-        Date anotherDate = otherPublication.date;
-        return thisDate.compareTo(anotherDate);
-    }
-
-    public int getLikesCount() {
-        return likes.size();
-    }
-
-    public static class sortPublicationsByLikes implements Comparator<Publication> {
+    public static class sortByLikes implements Comparator<Publication> {
         @Override
         public int compare(Publication o1, Publication o2) {
-            return Integer.compare(o1.getLikesCount(), o2.getLikesCount());
+            return Integer.compare(o1.likes.size(), o2.likes.size());
         }
     }
+
 }
