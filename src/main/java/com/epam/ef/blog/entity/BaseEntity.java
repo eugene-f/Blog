@@ -4,14 +4,11 @@ import java.util.Random;
 import java.util.UUID;
 
 public class BaseEntity {
-    private static final Random random = new Random();
-    private int id;
-    private UUID uuid = UUID.randomUUID();
 
-    public BaseEntity() {
-        id = random.nextInt();
-        uuid = UUID.randomUUID();
-    }
+    private static final Random random = new Random();
+
+    private final int id = random.nextInt();
+    private final UUID uuid = UUID.randomUUID();
 
     public static Random getRandom() {
         return random;
@@ -36,15 +33,8 @@ public class BaseEntity {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public UUID getUuid() {
         return uuid;
     }
 
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
-    }
 }
