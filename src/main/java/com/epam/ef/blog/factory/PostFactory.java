@@ -1,5 +1,6 @@
 package com.epam.ef.blog.factory;
 
+import com.epam.ef.blog.Utils;
 import com.epam.ef.blog.entity.Post;
 import com.thedeanda.lorem.Lorem;
 
@@ -9,7 +10,6 @@ import java.util.Random;
 
 public class PostFactory {
 
-    private static final Random random = new Random();
     private static List<Post> posts = new ArrayList<Post>();
 
 //    static {
@@ -40,9 +40,10 @@ public class PostFactory {
 
     public static Post getRandom() {
         if (posts.size() > 0) {
-            return posts.get(random.nextInt(posts.size()));
+            return posts.get(Utils.random.nextInt(posts.size()));
         } else {
-            return PostFactory.create();
+            posts.add(PostFactory.create());
+            return posts.get(0);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.epam.ef.blog.factory;
 
+import com.epam.ef.blog.Utils;
 import com.epam.ef.blog.entity.User;
 import com.thedeanda.lorem.Lorem;
 
@@ -10,7 +11,6 @@ import java.util.UUID;
 
 public class UserFactory {
 
-    private static final Random random = new Random();
     private static List<User> users = new ArrayList<User>();
 
     public static User create() {
@@ -31,9 +31,10 @@ public class UserFactory {
 
     public static User getRandom() {
         if (users.size() > 0) {
-            return users.get(random.nextInt(users.size()));
+            return users.get(Utils.random.nextInt(users.size()));
         } else {
-            return UserFactory.create();
+            users.add(UserFactory.create());
+            return users.get(0);
         }
     }
 

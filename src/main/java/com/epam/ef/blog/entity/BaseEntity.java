@@ -1,17 +1,14 @@
 package com.epam.ef.blog.entity;
 
+import com.epam.ef.blog.Utils;
+
 import java.util.Random;
 import java.util.UUID;
 
 public class BaseEntity {
 
-    private static final Random random = new Random();
-    private final int id = random.nextInt();
+    private final int id = Utils.random.nextInt();
     private final UUID uuid = UUID.randomUUID();
-
-    public static Random getRandom() {
-        return random;
-    }
 
     @Override
     public int hashCode() {
