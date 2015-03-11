@@ -10,14 +10,6 @@ public class Role {
         this.permissions = permissions;
     }
 
-    @Override
-    public String toString() {
-        return "Role{" +
-                "name='" + name + '\'' +
-                ", permissions=" + permissions +
-                '}';
-    }
-
     public String getName() {
         return name;
     }

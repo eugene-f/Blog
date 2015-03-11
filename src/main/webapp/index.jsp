@@ -32,6 +32,7 @@
             border-color: #9E9E9E; /* Grey 500 */
             border-radius: 5px;
             box-shadow: 0 7px 15px 5px rgba(0, 0, 0, 0.25);
+            text-align: justify;
         }
 
         div.card h3 {
@@ -41,16 +42,19 @@
 </head>
 <body>
 <div id="header">
+    <h6>${blog.author.firstName} ${blog.author.lastName}</h6>
     <h1>${blog.title}</h1>
-    <h4>Author: ${blog.author.firstName} ${blog.author.lastName}</h4>
+    <h5>${blog.description}</h5>
+    <p>&#9733; ${blog.rating}</p>
 </div>
 <c:forEach items="${blog.posts}" var="post">
     <div class="card">
+        <h6>${post.author.firstName} ${post.author.lastName}</h6>
         <h3>${post.title}</h3>
-        <h6>${post.date}</h6>
+        <h6>${post.dateFormat}</h6>
         <hr>
         <p>${post.content}</p>
-        <h6>${post.likes.size()} likes</h6>
+        <h6>&#9829; ${post.likes.size()}</h6>
     </div>
 </c:forEach>
 </body>

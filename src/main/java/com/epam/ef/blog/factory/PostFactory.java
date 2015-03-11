@@ -1,7 +1,9 @@
 package com.epam.ef.blog.factory;
 
 import com.epam.ef.blog.Utils;
+import com.epam.ef.blog.entity.Blog;
 import com.epam.ef.blog.entity.Post;
+import com.epam.ef.blog.entity.User;
 import com.thedeanda.lorem.Lorem;
 
 import java.util.ArrayList;
@@ -18,33 +20,23 @@ public class PostFactory {
 //        }
 //    }
 
-    public static Post create() {
-        Post post = new Post(UserFactory.getRandom(), BlogFactory.getRandom());
+    public static Post create(Blog blog) {
+        Post post = new Post(blog);
         post.setTitle(Lorem.getTitle(3, 15));
-        post.setVisibility(UserFactory.getUsers());
-        post.setReposts(UserFactory.getUsers());
 //        post.setComments();
 //        post.setTags();
         post.setContent(Lorem.getHtmlParagraphs(3, 7));
-        post.setLikes(UserFactory.getUsers());
+        post.setLikes(UserFactory.create(Utils.random.nextInt(100)));
         posts.add(post);
         return post;
     }
 
-    public static List<Post> create(int count) {
+    public static List<Post> create(Blog blog, int count) {
+        List<Post> posts = new ArrayList<Post>();
         for (int i = 0; i < count; i++) {
-            posts.add(create());
+            posts.add(create(blog));
         }
         return posts;
-    }
-
-    public static Post getRandom() {
-        if (posts.size() > 0) {
-            return posts.get(Utils.random.nextInt(posts.size()));
-        } else {
-            posts.add(PostFactory.create());
-            return posts.get(0);
-        }
     }
 
     public static List<Post> getPosts() {

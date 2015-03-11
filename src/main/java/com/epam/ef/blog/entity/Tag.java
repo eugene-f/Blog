@@ -20,15 +20,6 @@ public class Tag extends BaseEntity implements Comparable<Tag> {
         return (thisPostsCount < anotherPostsCount ? -1 : (thisPostsCount == anotherPostsCount ? 0 : 1));
     }
 
-    @Override
-    public String toString() {
-        return "Tag{" +
-                "blog=" + blog +
-                ", title='" + title + '\'' +
-                ", posts=" + posts +
-                '}';
-    }
-
     public Blog getBlog() {
         return blog;
     }

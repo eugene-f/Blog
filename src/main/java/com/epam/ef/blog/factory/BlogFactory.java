@@ -16,20 +16,11 @@ public class BlogFactory {
         Blog blog = new Blog(UserFactory.create());
         blog.setTitle(Lorem.getTitle(3, 7));
         blog.setDescription(Lorem.getWords(10, 25));
-        blog.setRating(Utils.random.nextInt());
-        blog.setPosts(PostFactory.create(Utils.random.nextInt(3)));
+        blog.setRating(Utils.random.nextInt(1000));
+        blog.setPosts(PostFactory.create(blog, Utils.random.nextInt(10)));
 //        blog.setTags();
         blogs.add(blog);
         return blog;
-    }
-
-    public static Blog getRandom() {
-        if (blogs.size() > 0) {
-            return blogs.get(Utils.random.nextInt(blogs.size()));
-        } else {
-            blogs.add(BlogFactory.create());
-            return blogs.get(0);
-        }
     }
 
     public static List<Blog> getBlogs() {

@@ -12,15 +12,6 @@ public class Permissions {
         this.delete = delete;
     }
 
-    @Override
-    public String toString() {
-        return "Permissions{" +
-                "create=" + create +
-                ", edit=" + edit +
-                ", delete=" + delete +
-                '}';
-    }
-
     public boolean isCreate() {
         return create;
     }

@@ -1,17 +1,20 @@
 package com.epam.ef.blog.entity;
 
+import com.epam.ef.blog.Utils;
+
 import java.util.Date;
 import java.util.List;
 
 public class User extends BaseEntity implements Comparable<User> {
 
     private final Date registrationDate = new Date();
+    private final String registrationDateFormat = Utils.formatDate(registrationDate);
     private Role role;
     private String firstName;
     private String lastName;
     private String email;
     private String passwordHash;
-    private List<Post> posts;
+    private List<Post> posts; // ToDo: replace posts on blogs
     private List<Comment> comments;
     private List<Post> favorites;
     private List<User> subscriptions;
@@ -24,25 +27,12 @@ public class User extends BaseEntity implements Comparable<User> {
         return (thisPostsCount < anotherPostsCount ? -1 : (thisPostsCount == anotherPostsCount ? 0 : 1));
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "registrationDate=" + registrationDate +
-                ", role=" + role +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", passwordHash='" + passwordHash + '\'' +
-                ", posts=" + posts +
-                ", comments=" + comments +
-                ", favorites=" + favorites +
-                ", subscriptions=" + subscriptions +
-                ", subscribers=" + subscribers +
-                '}';
-    }
-
     public Date getRegistrationDate() {
         return registrationDate;
+    }
+
+    public String getRegistrationDateFormat() {
+        return registrationDateFormat;
     }
 
     public Role getRole() {

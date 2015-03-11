@@ -12,7 +12,7 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/servlet")
 public class Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("blog", BlogFactory.getRandom());
+        request.setAttribute("blog", BlogFactory.create());
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

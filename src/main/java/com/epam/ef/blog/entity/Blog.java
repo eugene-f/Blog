@@ -1,11 +1,14 @@
 package com.epam.ef.blog.entity;
 
+import com.epam.ef.blog.Utils;
+
 import java.util.Date;
 import java.util.List;
 
 public class Blog extends BaseEntity implements Comparable<Blog> {
 
     private final Date createdDate = new Date();
+    private final String createdDateFormat = Utils.formatDate(createdDate);
     private final User author;
     private String title;
     private String description;
@@ -24,21 +27,12 @@ public class Blog extends BaseEntity implements Comparable<Blog> {
         return (thisRating < otherRating ? -1 : (thisRating == otherRating ? 0 : 1));
     }
 
-    @Override
-    public String toString() {
-        return "Blog{" +
-                "createdDate=" + createdDate +
-                ", author=" + author +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", rating=" + rating +
-                ", posts=" + posts +
-                ", tags=" + tags +
-                '}';
-    }
-
     public Date getCreatedDate() {
         return createdDate;
+    }
+
+    public String getCreatedDateFormat() {
+        return createdDateFormat;
     }
 
     public User getAuthor() {

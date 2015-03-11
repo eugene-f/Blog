@@ -29,6 +29,14 @@ public class UserFactory {
         return user;
     }
 
+    public static List<User> create(int count) {
+        List<User> u = new ArrayList<User>();
+        for (int i = 0; i < count; i++) {
+            u.add(create());
+        }
+        return u;
+    }
+
     public static User getRandom() {
         if (users.size() > 0) {
             return users.get(Utils.random.nextInt(users.size()));
@@ -36,13 +44,6 @@ public class UserFactory {
             users.add(UserFactory.create());
             return users.get(0);
         }
-    }
-
-    public static List<User> create(int count) {
-        for (int i = 0; i < count; i++) {
-            users.add(create());
-        }
-        return users;
     }
 
     public static List<User> getUsers() {
