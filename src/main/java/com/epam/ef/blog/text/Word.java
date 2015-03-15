@@ -1,4 +1,7 @@
 package com.epam.ef.blog.text;
 
-public class Word {
+import java.util.List;
+
+public class Word extends SentencePart {
+    private List<Symbol> value;
 }
