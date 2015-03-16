@@ -1,9 +1,15 @@
 package com.epam.ef.blog.text;
 
 public class Symbol extends SentencePart {
-    private char value;
+
+    private String value;
 
     public Symbol(String c) {
-        this.value = c.charAt(0);
+        this.value = c;
     }
+
+    public void print() {
+        System.out.println(value);
+    }
+
 }

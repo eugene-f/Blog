@@ -25,6 +25,7 @@ public class Parser {
 //        }
 
         Text text = new Text(string);
+        text.print();
 
         System.out.println(Boon.toPrettyJson(text));
 
