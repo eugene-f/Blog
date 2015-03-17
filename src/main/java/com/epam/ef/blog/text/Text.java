@@ -7,8 +7,8 @@ public class Text {
 
     private List<Paragraph> value = new ArrayList<Paragraph>();
 
-    public Text(String s) {
-        String[] split = s.split("\\n");
+    public Text(String text) {
+        String[] split = text.split(Parser.REGEX_PARAGRAPH_SEPARATOR);
         for (String ss : split) {
             this.value.add(new Paragraph(ss));
         }

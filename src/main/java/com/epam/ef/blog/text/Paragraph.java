@@ -7,8 +7,8 @@ public class Paragraph {
 
     private List<Sentence> value = new ArrayList<Sentence>();
 
-    public Paragraph(String s) {
-        String[] split = s.split(".*\\. ? ?.*");
+    public Paragraph(String paragraph) {
+        String[] split = paragraph.split(Parser.REGEX_SENTENCE_SEPARATOR);
         for (String ss : split) {
             this.value.add(new Sentence(ss));
         }
@@ -18,6 +18,7 @@ public class Paragraph {
         for (Sentence sentence : value) {
             sentence.print();
         }
+        System.out.print("\n");
     }
 
 }

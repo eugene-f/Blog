@@ -7,8 +7,8 @@ public class Sentence {
 
     private List<Word> value = new ArrayList<Word>();
 
-    public Sentence(String s) {
-        String[] split = s.split(".* ? .*");
+    public Sentence(String sentence) {
+        String[] split = sentence.split(Parser.REGEX_WORD_SEPARATOR);
         for (String ss : split) {
             this.value.add(new Word(ss));
         }
@@ -18,6 +18,7 @@ public class Sentence {
         for (Word word : value) {
             word.print();
         }
+        System.out.print(". ");
     }
 
 }

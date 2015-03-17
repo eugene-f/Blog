@@ -1,28 +1,21 @@
 package com.epam.ef.blog.text;
 
 import org.boon.Boon;
-import org.boon.Str;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parser {
 
+    static final String REGEX_PARAGRAPH_SEPARATOR = "\\n";
+    static final String REGEX_SENTENCE_SEPARATOR = "\\. ";
+    static final String REGEX_WORD_SEPARATOR = " ";
+    static final String REGEX_SYMBOL_SEPARATOR = "";
+
     public static void parse(String string) {
-//        Text text = new Text();
-//        text.getValue().add(new Paragraph());
 
-        System.out.println("string = [" + string + "]");
-
-//        Pattern pattern = Pattern.compile(".+");
-//        Matcher matcher = pattern.matcher(string);
-//        System.out.println(matcher.matches());
-
-//        String[] stringsSplit = string.split("\\. ? ?");
-//
-//        for (String s : stringsSplit) {
-//            System.out.println("'" + s + "'\n");
-//        }
+        System.out.println(string);
+        System.out.println();
 
         Text text = new Text(string);
         text.print();
@@ -30,4 +23,11 @@ public class Parser {
         System.out.println(Boon.toPrettyJson(text));
 
     }
+
+    public static void sandbox() {
+        Pattern pattern = Pattern.compile("([a-z]+|[0-9]+|\\.+)+\\.(com|org|ru|kz)");
+        Matcher matcher = pattern.matcher("www.kstu.kz");
+        System.out.println(matcher.matches());
+    }
+
 }

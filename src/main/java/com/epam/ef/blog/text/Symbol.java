@@ -4,12 +4,12 @@ public class Symbol extends SentencePart {
 
     private String value;
 
-    public Symbol(String c) {
-        this.value = c;
+    public Symbol(String symbol) {
+        this.value = symbol;
     }
 
     public void print() {
-        System.out.println(value);
+        System.out.print(value);
     }
 
 }
