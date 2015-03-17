@@ -12,22 +12,9 @@ public class Parser {
     static final String REGEX_WORD_SEPARATOR = " ";
     static final String REGEX_SYMBOL_SEPARATOR = "";
 
-    public static void parse(String string) {
-
-        System.out.println(string);
-        System.out.println();
-
+    public static Text parse(String string) {
         Text text = new Text(string);
-        text.print();
-
-        System.out.println(Boon.toPrettyJson(text));
-
-    }
-
-    public static void sandbox() {
-        Pattern pattern = Pattern.compile("([a-z]+|[0-9]+|\\.+)+\\.(com|org|ru|kz)");
-        Matcher matcher = pattern.matcher("www.kstu.kz");
-        System.out.println(matcher.matches());
+        return text;
     }
 
 }

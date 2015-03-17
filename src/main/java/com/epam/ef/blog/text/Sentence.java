@@ -9,8 +9,8 @@ public class Sentence {
 
     public Sentence(String sentence) {
         String[] split = sentence.split(Parser.REGEX_WORD_SEPARATOR);
-        for (String ss : split) {
-            this.value.add(new Word(ss));
+        for (String word : split) {
+            this.value.add(new Word(word));
         }
     }
 

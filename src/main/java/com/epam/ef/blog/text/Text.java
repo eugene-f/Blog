@@ -9,8 +9,8 @@ public class Text {
 
     public Text(String text) {
         String[] split = text.split(Parser.REGEX_PARAGRAPH_SEPARATOR);
-        for (String ss : split) {
-            this.value.add(new Paragraph(ss));
+        for (String paragraph : split) {
+            this.value.add(new Paragraph(paragraph));
         }
     }
 

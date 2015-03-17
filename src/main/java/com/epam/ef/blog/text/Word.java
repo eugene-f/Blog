@@ -9,8 +9,8 @@ public class Word extends SentencePart {
 
     public Word(String word) {
         String[] split = word.split(Parser.REGEX_SYMBOL_SEPARATOR);
-        for (String ss : split) {
-            this.value.add(new Symbol(ss));
+        for (String symbol : split) {
+            this.value.add(new Symbol(symbol));
         }
     }
 

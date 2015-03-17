@@ -9,8 +9,8 @@ public class Paragraph {
 
     public Paragraph(String paragraph) {
         String[] split = paragraph.split(Parser.REGEX_SENTENCE_SEPARATOR);
-        for (String ss : split) {
-            this.value.add(new Sentence(ss));
+        for (String sentence : split) {
+            this.value.add(new Sentence(sentence));
         }
     }
 
