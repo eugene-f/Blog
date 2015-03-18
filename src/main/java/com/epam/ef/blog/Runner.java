@@ -4,11 +4,9 @@ import com.epam.ef.blog.entity.Blog;
 import com.epam.ef.blog.factory.BlogFactory;
 import com.epam.ef.blog.io.TextReader;
 import com.epam.ef.blog.text.Parser;
-import com.epam.ef.blog.text.Text;
-import com.thedeanda.lorem.Lorem;
+import com.epam.ef.blog.text.Type;
 import org.boon.Boon;
 
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ResourceBundle;
@@ -49,11 +47,14 @@ public class Runner {
 
     private static void parseText() {
         String text;
-        text = Lorem.getParagraphs(2, 2);
+//        text = Lorem.getParagraphs(2, 2);
         text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
                 "Donec interdum quam id erat condimentum imperdiet.\n" +
                 "Nunc iaculis, ex non imperdiet pulvinar, sem purus convallis nunc, a faucibus risus eros et nibh.";
+        System.out.println(Boon.toPrettyJson(text));
         Parser.parse(text).print();
+
+        Parser.parseAny(text, Type.TEXT);
     }
 
     public static void sandbox() {
