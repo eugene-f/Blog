@@ -1,11 +1,27 @@
 package com.epam.ef.blog.io;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Scanner;
 
 public class TextReader {
+
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        InputStream inputStream;
+        inputStream = new FileInputStream(new File("in.txt"));
+
+        byte[] value = new byte[inputStream.read()];
+        int byteCount = inputStream.read(value);
+
+        inputStream.close();
+
+        System.out.println(byteCount);
+        System.out.println(value);
+
+        Reader reader = new FileReader(new File("in.txt"));
+        char[] chars = new char[0];
+        StringBuffer stringBuffer = new StringBuffer();
+        reader.read();
+    }
 
     public static String readFile(String fileName) throws FileNotFoundException {
         StringBuilder stringBuilder = new StringBuilder();
